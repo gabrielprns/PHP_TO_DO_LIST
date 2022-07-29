@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To do List</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class = "main-section">
@@ -18,7 +19,7 @@
   </div>
 
   <div class="show-all-section">
-    <div class = "All-itens">
+    <div class = "all-item">
       <input type="checkbox">
       <h2>pppppp</h2>
       <br>
