@@ -20,6 +20,9 @@ require "db_conn.php";
       <button type="submit">Add &nbsp; <span>&#43</span></button>
     </form>
   </div>
+  <?php
+    /*$todos = $conn->query("SELECT * FROM todos ORDER BY id DESC");*/
+  ?>
 
   <div class="show-all-section">
     <div class = "all-item">
