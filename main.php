@@ -16,7 +16,16 @@
       <button type="submit">Add &nbsp; <span>&#43</span></button>
     </form>
   </div>
-  
+
+  <div class="show-all-section">
+    <div class = "All-itens">
+      <input type="checkbox">
+      <h2>pppppp</h2>
+      <br>
+      <small>criado em 28/07/2022</small>
+    </div>
+  </div>
+
 </div>
   
 </body>
