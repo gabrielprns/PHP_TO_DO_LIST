@@ -32,12 +32,16 @@ require "db_conn.php";
         </div>
     <?php } ?>
 
-    <div class = "all-item">
-      <input type="checkbox">
-      <h2>pppppp</h2>
-      <br>
-      <small>criado em 28/07/2022</small>
-    </div>
+    <?php while($todo = $todos -> fetch(PDO::FETCH_ASSOC)) {?>
+      <div class = "all-item">
+        <span id="<?php echo $todo["id"]; ?>" 
+          class="remove-to-do">x</span>
+        <input type="checkbox">
+        <h2><?php echo $todo['title'] ?></h2>
+        <br>
+        <small>criado em 28/07/2022</small>
+      </div>
+    <?php } ?>
   </div>
 
 </div>
