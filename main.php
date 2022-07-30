@@ -25,13 +25,11 @@ require "db_conn.php";
   ?>
 
   <div class="show-all-section">
-    <?php if($todos->rowcount() === 0){?>
-      <div class = "all-item">
-        <input type="checkbox">
-        <h2>pppppp</h2>
-        <br>
-        <small>criado em 28/07/2022</small>
-      </div>
+    <?php if($todos->rowcount() <= 0){?>
+        <div class = "empty">
+            <img src="img/f.png" width="100%" />
+            <img src="img/Ellipsis.gif" width="80px">
+        </div>
     <?php } ?>
 
     <div class = "all-item">
