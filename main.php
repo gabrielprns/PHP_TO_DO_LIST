@@ -21,10 +21,19 @@ require "db_conn.php";
     </form>
   </div>
   <?php
-    /*$todos = $conn->query("SELECT * FROM todos ORDER BY id DESC");*/
+    $todos = $conn->query("SELECT * FROM todos ORDER BY id DESC");
   ?>
 
   <div class="show-all-section">
+    <?php if($todos->rowcount() === 0){?>
+      <div class = "all-item">
+        <input type="checkbox">
+        <h2>pppppp</h2>
+        <br>
+        <small>criado em 28/07/2022</small>
+      </div>
+    <?php } ?>
+
     <div class = "all-item">
       <input type="checkbox">
       <h2>pppppp</h2>
