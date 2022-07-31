@@ -55,7 +55,7 @@ require "db_conn.php";
             <h2><?php echo $todo['title'] ?></h2>
         <?php } ?>
         <br>
-        <small>criado em 28/07/2022</small>
+        <small>created: <?php echo $todo['date_time'] ?></small>
       </div>
     <?php } ?>
   </div>
@@ -67,7 +67,16 @@ require "db_conn.php";
   $(document).ready(function(){
     $(".remove-to-do").click(function(){
         const id = $(this).attr("id");
-        alert(id);
+        $.post("app/remove.php",
+        {
+            id:id
+        },
+        (data) =>{
+          if(data){
+            $(this).parent().hide(600);
+          }
+
+        });
     });
 
   });
