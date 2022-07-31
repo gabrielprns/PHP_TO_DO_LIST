@@ -47,11 +47,13 @@ require "db_conn.php";
         <?php if($todo["checked"]){ ?>
             <input type="checkbox" 
                   class="check-box"
+                  data-todo-id ="<?php echo $todo['id']; ?>"
                   checked/>
             <h2 class = "checked"><?php echo $todo['title'] ?></h2>
         <?php }else{ ?>
             <input type="checkbox" 
-                    class="check-box"/>
+                    class="check-box"
+                    data-todo-id ="<?php echo $todo['id']; ?>"/>
             <h2><?php echo $todo['title'] ?></h2>
         <?php } ?>
         <br>
@@ -80,6 +82,26 @@ require "db_conn.php";
     });
 
   });
+
+  $(".check-box").click(function(e){
+                const id = $(this).attr('data-todo-id');
+                
+                $.post('app/check.php', 
+                      {
+                          id: id
+                      },
+                      (data) => {
+                          if(data != 'error'){
+                              const h2 = $(this).next();
+                              if(data === '1'){
+                                  h2.removeClass('checked');
+                              }else {
+                                  h2.addClass('checked');
+                              }
+                          }
+                      }
+                );
+            });
 </script>
 </body>
 </html>
