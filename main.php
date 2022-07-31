@@ -13,7 +13,7 @@ require "db_conn.php";
 <body>
   <div class = "main-section">
   <div class = "add-section">
-    <form action="">
+    <form action="app/add.php" method= "POST" autocomplete = "off">
       <input type="text"
              name= "title"
              placeholder = "É necessário preencher este campo" />
@@ -36,8 +36,16 @@ require "db_conn.php";
       <div class = "all-item">
         <span id="<?php echo $todo["id"]; ?>" 
           class="remove-to-do">x</span>
-        <input type="checkbox">
-        <h2><?php echo $todo['title'] ?></h2>
+        <?php if($todo["checked"]){ ?>
+            <input type="checkbox" 
+                  class="check-box"
+                  checked/>
+            <h2 class = "checked"><?php echo $todo['title'] ?></h2>
+        <?php }else{ ?>
+            <input type="checkbox" 
+                    class="check-box"/>
+            <h2><?php echo $todo['title'] ?></h2>
+        <?php } ?>
         <br>
         <small>criado em 28/07/2022</small>
       </div>
